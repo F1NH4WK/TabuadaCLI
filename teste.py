@@ -1,13 +1,5 @@
-import sys
-from time import sleep
+juninho = [4, 5]
+juninho2 = [[4,5,True], [5, 4,True]]
 
-print('sss')
-print('gay')
-sleep(1)
-sys.stdout.write('\x1b[1A')
-
-for i in range(0, 11):
-    sleep(1)
-    print(f'Tempo: {i}')
-    sys.stdout.write('\x1b[1A')
-    
+if juninho == juninho2[0][0:2]:
+    print('sim')
