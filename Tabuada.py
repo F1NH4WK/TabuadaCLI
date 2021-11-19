@@ -79,8 +79,90 @@ if level == 1:
 if level == 2:
         system('cls')
         digitar('\033[mVOCÊ ESCOLHEU O NÍVEL \033[1;33mMÉDIO\033[m!')
+        print('')
+        digitar("COMEÇANDO EM:\n")
+        sleep(1)
+        print('3')
+        sleep(1)
+        print('2')
+        sleep(1)
+        print('1')
+        sleep(1)
+        result = []
+        for i in range(1, 11):
+                system('cls')
+                var = 0
+                num = [randint(2, 6), randint(2, 6)]
+                while i >= 2:
+                        if num in result[var][0:2]:
+                                num = [randint(2,6), randint(2,6)]
+                        if var+1 == len(result):
+                                break
+                        var += 1
+                        
+                digitar(f'\033[1;35m{num[0]}\033[m X \033[1;35m{num[1]}\033[m\n')
+                sleep(1)
+                resp = int(input('\033[mRESPOSTA: \033[1;32m'))
+                if resp == num[0] * num[1]:
+                        num.append(True)
+                        result.append(num)
+                else:
+                        num.append(False)
+                        result.append(num)
+        digitar('\033[mFIM\n')
+        sleep(1)
+        acertos = 0
+        for i in result:
+                if i[2] == True:
+                        digitar(f'\033[1;32m{i[0]} X {i[1]}\033[m = \033[1;35m{i[0]*i[1]}\033[m\n')
+                        acertos += 1
+                else:
+                        digitar(f'\033[1;31m{i[0]} X {i[1]}\033[m = \033[1;35m{i[0]*i[1]}\033[m\n')
+        digitar(f'\033[1;32mACERTOS: {acertos}\033[m\n')
+        digitar(f'\033[1;31mERROS: {10 - acertos}\033[m')
 
 
 if level == 3:
         system('cls')
         digitar('\033[mVOCÊ ESCOLHEU O NÍVEL \033[1;31mDIFÍCIL\033[m!')
+        print('')
+        digitar("COMEÇANDO EM:\n")
+        sleep(1)
+        print('3')
+        sleep(1)
+        print('2')
+        sleep(1)
+        print('1')
+        sleep(1)
+        result = []
+        for i in range(1, 11):
+                system('cls')
+                var = 0
+                num = [randint(2, 9), randint(2, 9)]
+                while i >= 2:
+                        if num in result[var][0:2]:
+                                num = [randint(2,9), randint(2,9)]
+                        if var+1 == len(result):
+                                break
+                        var += 1
+                        
+                digitar(f'\033[1;35m{num[0]}\033[m X \033[1;35m{num[1]}\033[m\n')
+                sleep(1)
+                resp = int(input('\033[mRESPOSTA: \033[1;32m'))
+                if resp == num[0] * num[1]:
+                        num.append(True)
+                        result.append(num)
+                else:
+                        num.append(False)
+                        result.append(num)
+        digitar('\033[mFIM\n')
+        sleep(1)
+        acertos = 0
+        for i in result:
+                if i[2] == True:
+                        digitar(f'\033[1;32m{i[0]} X {i[1]}\033[m = \033[1;35m{i[0]*i[1]}\033[m\n')
+                        acertos += 1
+                else:
+                        digitar(f'\033[1;31m{i[0]} X {i[1]}\033[m = \033[1;35m{i[0]*i[1]}\033[m\n')
+        digitar(f'\033[1;32mACERTOS: {acertos}\033[m\n')
+        digitar(f'\033[1;31mERROS: {10 - acertos}\033[m')
