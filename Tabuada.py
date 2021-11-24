@@ -49,7 +49,7 @@ if level == 1:
                 num = [randint(2, 4), randint(2, 4)]
 
                 while i >= 2:
-                        if num in result[var][0:2]:
+                        if num in result[var][0:2] or result[var][1::-1]:
                                 num = [randint(2,4), randint(2,4)]
                         if var+1 == len(result):
                                 break
@@ -58,6 +58,7 @@ if level == 1:
                 digitar(f'\033[1;35m{num[0]}\033[m X \033[1;35m{num[1]}\033[m\n')
                 sleep(1)
                 resp = int(input('\033[mRESPOSTA: \033[1;32m'))
+                num.append(resp)
                 if resp == num[0] * num[1]:
                         num.append(True)
                         result.append(num)
@@ -75,11 +76,11 @@ if level == 1:
         if total < 30:
                 digitar(f'Você levou \033[1;32m{total:.0f} segundos\033[m para resolver as contas, \033[1;32mCONTINUE ASSIM, PORRA\033[m!\n')
         for i in result:
-                if i[2] == True:
+                if i[3] == True:
                         digitar(f'\033[1;32m{i[0]} X {i[1]}\033[m = \033[1;35m{i[0]*i[1]}\033[m\n')
                         acertos += 1
                 else:
-                        digitar(f'\033[1;31m{i[0]} X {i[1]}\033[m = \033[1;35m{i[0]*i[1]}\033[m\n')
+                        digitar(f'\033[1;31m{i[0]} X {i[1]}\033[m = \033[1;31m{i[2]}\033[m ---> \033[1;32m{i[0]} x {i[1]}\033[m = \033[1;35m{i[0]*i[1]}\033[m\n')
 
         digitar(f'\033[1;32mACERTOS: {acertos}\033[m\n')
         digitar(f'\033[1;31mERROS: {10 - acertos}\033[m')
@@ -102,7 +103,7 @@ if level == 2:
                 num = [randint(2, 6), randint(2, 6)]
 
                 while i >= 2:
-                        if num in result[var][0:2]:
+                        if num in result[var][0:2] or result[var][1::-1]:
                                 num = [randint(2,6), randint(2,6)]
                         if var+1 == len(result):
                                 break
@@ -111,6 +112,7 @@ if level == 2:
                 digitar(f'\033[1;35m{num[0]}\033[m X \033[1;35m{num[1]}\033[m\n')
                 sleep(0.5)
                 resp = int(input('\033[mRESPOSTA: \033[1;32m'))
+                num.append(resp)
                 if resp == num[0] * num[1]:
                         num.append(True)
                         result.append(num)
@@ -129,11 +131,11 @@ if level == 2:
                 digitar(f'Você levou \033[1;32m{total:.0f} segundos\033[m para resolver as contas, \033[1;32mCONTINUE ASSIM, PORRA\033[m!\n')
 
         for i in result:
-                if i[2] == True:
+                if i[3] == True:
                         digitar(f'\033[1;32m{i[0]} X {i[1]}\033[m = \033[1;35m{i[0]*i[1]}\033[m\n')
                         acertos += 1
                 else:
-                        digitar(f'\033[1;31m{i[0]} X {i[1]}\033[m = \033[1;35m{i[0]*i[1]}\033[m\n')
+                        digitar(f'\033[1;31m{i[0]} X {i[1]}\033[m = \033[1;31m{i[2]}\033[m ---> \033[1;32m{i[0]} x {i[1]}\033[m = \033[1;35m{i[0]*i[1]}\033[m\n')
 
         digitar(f'\033[1;32mACERTOS: {acertos}\033[m\n')
         digitar(f'\033[1;31mERROS: {10 - acertos}\033[m')
@@ -156,7 +158,7 @@ if level == 3:
                 var = 0
                 num = [randint(2, 9), randint(2, 9)]
                 while i >= 2:
-                        if num in result[var][0:2]:
+                        if num in result[var][0:2] or result[var][1::-1]:
                                 num = [randint(2,9), randint(2,9)]
                         if var+1 == len(result):
                                 break
@@ -165,6 +167,7 @@ if level == 3:
                 digitar(f'\033[1;35m{num[0]}\033[m X \033[1;35m{num[1]}\033[m\n')
                 sleep(0.5)
                 resp = int(input('\033[mRESPOSTA: \033[1;32m'))
+                num.append(resp)
                 if resp == num[0] * num[1]:
                         num.append(True)
                         result.append(num)
@@ -184,11 +187,11 @@ if level == 3:
                 digitar(f'Você levou \033[1;32m{total:.0f} segundos\033[m para resolver as contas, \033[1;32mCONTINUE ASSIM, PORRA\033[m!\n')
 
         for i in result:
-                if i[2] == True:
+                if i[3] == True:
                         digitar(f'\033[1;32m{i[0]} X {i[1]}\033[m = \033[1;35m{i[0]*i[1]}\033[m\n')
                         acertos += 1
                 else:
-                        digitar(f'\033[1;31m{i[0]} X {i[1]}\033[m = \033[1;35m{i[0]*i[1]}\033[m\n')
+                        digitar(f'\033[1;31m{i[0]} X {i[1]}\033[m = \033[1;31m{i[2]}\033[m ---> \033[1;32m{i[0]} x {i[1]}\033[m = \033[1;35m{i[0]*i[1]}\033[m\n')
 
         digitar(f'\033[1;32mACERTOS: {acertos}\033[m\n')
         digitar(f'\033[1;31mERROS: {10 - acertos}\033[m')
